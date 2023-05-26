@@ -3,7 +3,7 @@ DRINKS project is a web application that allows users to search for and explore 
 
 ## Features
 - **Autocomplete**: As users start typing the name of a cocktail in the search bar, the autocomplete feature suggests relevant drink names in real-time, making it easy to find specific recipes.
-- **Drink Details**: Upon selecting a drink from the autocomplete suggestions or submitting the search, the application displays detailed information about the selected cocktail, including ingredients, measurements, and instructions for preparation.
+- **Drink Details**: Upon selecting a drink from the autocomplete suggestions, the application displays detailed information about the selected cocktail, including ingredients, measurements, and instructions for preparation.
 
 ## Technologies Used
 **The project is built using the following technologies and tools:**
