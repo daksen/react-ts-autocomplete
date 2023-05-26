@@ -21,7 +21,7 @@ export default function getDrinkRecipe(drink: Drink) {
     const ingredient = drink[`strIngredient${i + 1}` as T];
   
     if (measure && ingredient) {
-      recipe.push(measure + ingredient);
+      recipe.push(`${measure.trim()} ${ingredient.trim()}`);
     } else {
       break;
     }
