@@ -1,5 +1,5 @@
 # DRINKS
-DRINKS Autocomplete project is a web application that allows users to search for and explore a wide variety of cocktail recipes. With the help of an autocomplete feature, users can quickly find their favorite drinks or discover new ones by simply typing the name of a cocktail.
+DRINKS project is a web application that allows users to search for and explore a wide variety of cocktail recipes. With the help of an autocomplete feature, users can quickly find their favorite drinks or discover new ones by simply typing the name of a cocktail.
 
 ## Features
 - Autocomplete: As users start typing the name of a cocktail in the search bar, the autocomplete feature suggests relevant drink names in real-time, making it easy to find specific recipes.
