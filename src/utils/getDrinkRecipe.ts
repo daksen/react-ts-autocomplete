@@ -3,8 +3,7 @@ import { Drink } from "../interfaces/interfaces";
 /**
  * This TypeScript function takes a Drink object and returns an array of its recipe ingredients and
  * measurements.
- * @param {Drink} drink - The `drink` parameter is of type `Drink`, which is likely an interface or
- * type defining the structure of a drink object.
+ * @param {Drink} drink - Is a drink object.
  * @returns an array of strings that represent the recipe for a drink. The recipe is obtained from the
  * `drink` object passed as an argument to the function. The function loops through the object
  * properties using the `strMeasure` and `strIngredient` keys, and concatenates the values of each

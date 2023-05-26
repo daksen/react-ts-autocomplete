@@ -12,11 +12,6 @@ interface OptionsListProps<T> {
   getOptionLabel: (option: T) => string
 }
 
-/* The `OptionsList` function is a React component that takes in several props including an array of
-options, an input value, a selected index, and several functions to handle state changes. It then
-maps over the options array and renders an `OptionItem` component for each option. If there are no
-options or the options array is not an array, it returns null. If there are no options and the
-`debouncedValue` prop is undefined or truthy, it renders a "No options" message. */
 /**
  * Component to handle state changes. It then maps over the options array and renders an `OptionItem` 
  * component for each option. If there are no options or the options array is not an array,

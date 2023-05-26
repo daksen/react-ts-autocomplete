@@ -3,8 +3,8 @@ import { ResponseData } from "../interfaces/interfaces";
 /**
  * This function normalizes drink data by mapping over the data and returning an array of objects with
  * specific properties.
- * @param {ResponseData | null} data - The data parameter is of type ResponseData or null. It is the
- * data that is returned from an API call to retrieve information about drinks.
+ * @param {ResponseData | null} data - It is the data that is returned from an API call to retrieve 
+ * information about the drinks.
  * @returns The function `normalizeDrinksData` returns an array of objects with normalized drink data,
  * or `null` if the input data is `null`. If the input data is not an array of drinks, an empty array
  * is returned.

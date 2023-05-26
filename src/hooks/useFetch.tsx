@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 /**
  * This is a custom React hook that uses the Fetch API to make HTTP requests and returns the response
  * data, error message, and loading status.
- * @param {string} url - The `url` parameter is a string representing the URL of the API endpoint to
- * fetch data from.
+ * @param {string} url - Is a string representing the URL of the API endpoint to fetch the data.
  * @returns The `useFetch` function returns an object with three properties: `data`, `error`, and
  * `loading`. These properties are used to manage the state of the API request made by the `fetchData`
  * function.

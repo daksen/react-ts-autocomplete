@@ -8,8 +8,8 @@ interface HighlightedTextProps {
 /**
  * The function returns a React component that highlights a specific string within a given text.
  * @param {string} text - The text that needs to be highlighted.
- * @param {string} highlight - The `highlight` parameter is a string that represents the text that
- * needs to be highlighted in the `text` parameter.
+ * @param {string} highlight - Is a string that represents the text that needs to be highlighted 
+ * in the `text` parameter.
  * @returns This code is returning a React component that takes in two parameters: `text` and
  * `highlight`. It splits the `text` into an array of substrings based on the `highlight` string using
  * a regular expression.
