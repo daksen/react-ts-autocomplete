@@ -8,7 +8,7 @@ DRINKS project is a web application that allows users to search for and explore 
 ## Technologies Used
 **The project is built using the following technologies and tools:**
 
-- **Frontend**: React.js, TypeScript, HTML, CSS, Vite.
+- **Frontend**: React.js, TypeScript, HTML, CSS.
 - **TheCocktailDB API**: The application utilizes a cocktail API to fetch drink data and recipe information.
 
 ## Prerequisites
