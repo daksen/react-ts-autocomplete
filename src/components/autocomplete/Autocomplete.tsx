@@ -14,6 +14,7 @@ interface AutocompleteProps<T> {
   loading?: boolean
   showLoading?: boolean
   placeholder?: string
+  noOptionsLabel?: string
   onSelect: (option: T) => void
   onInputChange: (value: string) => void
   getOptionLabel: (option: T) => string
@@ -36,9 +37,10 @@ function Autocomplete<T>({
   options,
   inputValue,
   debouncedValue,
-  placeholder,
   loading,
   showLoading,
+  placeholder,
+  noOptionsLabel,
   onSelect,
   onInputChange,
   getOptionLabel,
@@ -142,6 +144,7 @@ function Autocomplete<T>({
           options={options}
           inputValue={inputValue}
           debouncedValue={debouncedValue}
+          noOptionsLabel={noOptionsLabel}
           selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
           setShowOptions={setShowOptions}

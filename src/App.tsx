@@ -63,6 +63,7 @@ function App() {
         inputValue={inputValue}
         debouncedValue={debouncedValue}
         placeholder="Search for a drink..."
+        noOptionsLabel="No drinks"
         loading={loading}
         showLoading={showLoading}
         onInputChange={onInputChange}

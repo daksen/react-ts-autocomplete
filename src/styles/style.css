@@ -163,6 +163,10 @@ input {
   font-weight: bold;
 }
 
+.no-options-label {
+  color: #757575;
+}
+
 @keyframes around {
   0% {
     transform: rotate(0deg);

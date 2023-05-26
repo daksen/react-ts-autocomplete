@@ -4,6 +4,7 @@ interface OptionsListProps<T> {
   options: T[] | null
   inputValue: string
   debouncedValue?: string
+  noOptionsLabel?: string
   selectedIndex: number
   setSelectedIndex: React.Dispatch<React.SetStateAction<number>>
   setShowOptions: React.Dispatch<React.SetStateAction<boolean>>
@@ -42,6 +43,7 @@ function OptionsList<T>({
   options,
   inputValue,
   debouncedValue,
+  noOptionsLabel,
   selectedIndex, 
   setSelectedIndex, 
   setShowOptions,
@@ -72,7 +74,7 @@ function OptionsList<T>({
         ))
       )}
       {(debouncedValue === undefined || debouncedValue) && !options?.length && (
-        <li className="option-item">No options</li>
+        <li className="no-options-label option-item">{noOptionsLabel || 'No options'}</li>
       )}
     </ul>
   );

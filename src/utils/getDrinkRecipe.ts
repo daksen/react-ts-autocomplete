@@ -17,12 +17,14 @@ export default function getDrinkRecipe(drink: Drink) {
   const recipe = [];
 
   for (let i = 0; i < 15; i++) {
-    const measure = drink[`strMeasure${i + 1}` as T];
     const ingredient = drink[`strIngredient${i + 1}` as T];
+    const measure = drink[`strMeasure${i + 1}` as T];
   
-    if (measure && ingredient) {
-      recipe.push(`${measure.trim()} ${ingredient.trim()}`);
+    if (ingredient) {
+      recipe.push(`${measure.trim()} ${ingredient.trim()}`.trim());
     } else {
+      /* Once there are no more ingredients, the loop is no longer needed and `break` is used
+      to exit the loop and return the recipe array. */
       break;
     }
   }
