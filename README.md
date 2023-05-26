@@ -8,12 +8,11 @@ DRINKS project is a web application that allows users to search for and explore 
 ## Technologies Used
 **The project is built using the following technologies and tools:**
 
-- **Frontend**: React.js, TypeScript, HTML, CSS.
+- **Frontend**: React.js, TypeScript, HTML, CSS, Vite.
 - **TheCocktailDB API**: The application utilizes a cocktail API to fetch drink data and recipe information.
 
 ## Prerequisites
 Vite requires Node.js version 14.18+, 16+.
-
 
 ## Installation
 **To run the project locally, follow these steps:**
