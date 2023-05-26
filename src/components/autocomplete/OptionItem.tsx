@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import HighlightedText from "./HighlightedText";
+import HighlightedText from "../HighlightedText";
 
 interface OptionItemProps<T> {
   option: T

@@ -5,6 +5,7 @@ const KEY_CODES: Record<string, string> = {
   DOWN: "ArrowDown",
   UP: "ArrowUp",
   ENTER: "Enter",
+  ESC: "Escape",
 }
 
 interface AutocompleteProps<T> {
@@ -59,7 +60,7 @@ function Autocomplete<T>({
           block: "start"
         });
       }
-    }, 100);
+    }, 50);
   }
 
   /* `onArrowUp` is a function that decrements the `selectedIndex` state variable by 1 if there
@@ -94,6 +95,11 @@ function Autocomplete<T>({
     }
   }
 
+  const onEscape = () => {
+    onInputChange('');
+    setSelectedIndex(-1);
+  }
+
   /**
    * This function handles input keyboard events and executes specific operations based on the key pressed.
    * @param event - The `event` parameter is a `React.KeyboardEvent` object that represents a keyboard
@@ -104,6 +110,7 @@ function Autocomplete<T>({
       [KEY_CODES.UP]: onArrowUp,
       [KEY_CODES.DOWN]: onArrowDown,
       [KEY_CODES.ENTER]: onEnter,
+      [KEY_CODES.ESC]: onEscape,
     }
 
     if (KEY_ACTIONS[event.key]) {
@@ -120,7 +127,8 @@ function Autocomplete<T>({
    * `handleInputChange` function is an instance of this event object.
    */
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onInputChange(event.target.value);
+    const value = event.target.value.replace(/[^\w ]/g, '');
+    onInputChange(value);
     setSelectedIndex(-1);
     setShowOptions(true);
   }
