@@ -54,7 +54,7 @@ const MyComponent = () => {
 
 ## 7. What's the difference in handling exceptions in promises, callbacks and async...await?
 
-**promises:** The .catch() method is used to handle errors in promises. It allows you to specify a callback function that will be called if the promise rejects.
+promises: The .catch() method is used to handle errors in promises. It allows you to specify a callback function that will be called if the promise rejects.
 
 ```jsx
 promise()
@@ -66,7 +66,7 @@ promise()
   });
 ```
 
-**callbacks:** The error handling is typically done by convention. The common practice is to pass an error object as the first argument to the callback function if an error occurs.
+callbacks: The error handling is typically done by convention. The common practice is to pass an error object as the first argument to the callback function if an error occurs.
 
 ```jsx
 callbackFunction((error, result) => {
@@ -78,7 +78,7 @@ callbackFunction((error, result) => {
 });
 ```
 
-**async/await:** The error handling is done using try-catch blocks. The await keyword is used to wait for a promise to resolve or reject, and any error thrown inside the try block can be caught in the catch block.
+async/await: The error handling is done using try-catch blocks. The await keyword is used to wait for a promise to resolve or reject, and any error thrown inside the try block can be caught in the catch block.
 
 ```jsx
 const asyncFunction = async () => {
@@ -99,7 +99,7 @@ setState is async because React to improve performance handles state updates in 
 
 ## 9. List the steps needed to migrate a Class to Function Component.
 
-- Rewrite the component as a Function component.
+- Rewrite the component as a function component.
 - Replace the render method with a return.
 - Replace the component state with the useState hook.
 - Replace lifecycle methods with their equivalent useEffect hook.
@@ -120,4 +120,5 @@ Using dangerouslySetInnerHTML.
 ```jsx
 <div dangerouslySetInnerHTML={{ __html: htmlString }} />
 ```
+
 To use this method, make sure that the HTML string is trusted and properly sanitized to prevent cross-site scripting attacks.
