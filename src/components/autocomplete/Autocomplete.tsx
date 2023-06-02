@@ -9,9 +9,9 @@ const KEY_CODES: Record<string, string> = {
 }
 
 interface AutocompleteProps<T> {
+  options: T[] | null
   inputValue: string
   debouncedValue?: string
-  options: T[] | null
   loading?: boolean
   showLoading?: boolean
   placeholder?: string
@@ -34,7 +34,7 @@ interface AutocompleteProps<T> {
  * a string label for that option. This label is used to display the option in the dropdown list and to
  * match against the user's input.
  */
-function Autocomplete<T>({ 
+function Autocomplete<T>({
   options,
   inputValue,
   debouncedValue,
@@ -50,7 +50,7 @@ function Autocomplete<T>({
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
-  // Scrolls the selected element into view with a smooth behavior.
+  /* This function scrolls the selected element into view with a smooth behavior. */
   const handleScroll = () => {
     setTimeout(() => {
       const selected = window.document.querySelector(".selected");
@@ -95,17 +95,20 @@ function Autocomplete<T>({
     }
   }
 
+  /* `onEscape` is a function that resets the input value and selected index when the escape 
+  key is pressed. */
   const onEscape = () => {
     onInputChange('');
     setSelectedIndex(-1);
   }
 
   /**
-   * This function handles input keyboard events and executes specific operations based on the key pressed.
+   * This function handles keyboard events for specific keys and executes corresponding actions.
    * @param event - The `event` parameter is a `React.KeyboardEvent` object that represents a keyboard
-   * event, such as a key press or release. It contains information about the key that was pressed.
+   * event, such as a key press or release. It contains information about the event, such as the key
+   * that was pressed and any modifiers that were used (e.g. shift, alt, etc.).
    */
-  const handlInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {   
+  const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {   
     const KEY_ACTIONS = {
       [KEY_CODES.UP]: onArrowUp,
       [KEY_CODES.DOWN]: onArrowDown,
@@ -120,11 +123,13 @@ function Autocomplete<T>({
   }
 
   /**
-   * This function handles input change events in a TypeScript React component by updating state
-   * variables.
-   * @param event - React.ChangeEvent<HTMLInputElement> is a type definition for an event object that
-   * is triggered when the value of an input element changes. The `event` parameter in the
-   * `handleInputChange` function is an instance of this event object.
+   * This function handles input change events in a React component by sanitizing the input value,
+   * calling a callback function with the sanitized value, resetting the selected index, and showing
+   * options.
+   * @param event - React.ChangeEvent<HTMLInputElement> - This is a type definition for the event
+   * object that is passed to the function when an input element's value changes. It is a generic type
+   * that specifies that the event is of type "ChangeEvent" and that the target element is an
+   * HTMLInputElement.
    */
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value.replace(/[^\w ]/g, '');
@@ -140,10 +145,10 @@ function Autocomplete<T>({
         value={inputValue}
         placeholder={placeholder}
         onChange={handleInputChange}
-        onKeyDown={handlInputKeyDown}
+        onKeyDown={handleInputKeyDown}
       />
       {(showLoading === undefined || showLoading) && loading && (
-        <div className="icon-container">
+        <div className="loader-container">
           <i className="loader" />
         </div>
       )}
@@ -152,12 +157,12 @@ function Autocomplete<T>({
           options={options}
           inputValue={inputValue}
           debouncedValue={debouncedValue}
-          noOptionsLabel={noOptionsLabel}
           selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
-          setShowOptions={setShowOptions}
+          noOptionsLabel={noOptionsLabel}
           onSelect={onSelect}
           getOptionLabel={getOptionLabel}
+          setSelectedIndex={setSelectedIndex}
+          setShowOptions={setShowOptions}
         />
       )}
     </div>

@@ -6,26 +6,24 @@ interface HighlightedTextProps {
 }
 
 /**
- * The function returns a React component that highlights a specific string within a given text.
- * @param {string} text - The text that needs to be highlighted.
- * @param {string} highlight - Is a string that represents the text that needs to be highlighted 
- * in the `text` parameter.
- * @returns This code is returning a React component that takes in two parameters: `text` and
- * `highlight`. It splits the `text` into an array of substrings based on the `highlight` string using
- * a regular expression.
+ * The HighlightedText function uses the useMemo hook to render text with highlighted substrings based
+ * on a given highlight string.
+ * @param {HighlightedTextProps} - The `HighlightedText` function takes in two props: `text` and
+ * `highlight`.
+ * @returns The `HighlightedText` component is returning a span element that contains one or more span
+ * elements, each of which represents a substring of the `text` prop that matches the `highlight` prop.
+ * The `textMatch` variable is an array of substrings obtained by splitting the `text` prop using a
+ * regular expression that matches the `highlight` string.
  */
 function HighlightedText({ text, highlight }: HighlightedTextProps) {
 
-  /* `const textMatchs` is using the `useMemo` hook to ensure that the function is only 
-  recomputed when either of these parameters change. The resulting array of substrings based on 
-  the `highlight` string using a regular expression is used to render the highlighted text. */
-  const textMatchs = useMemo(() => {
+  const textMatch = useMemo(() => {
     return text.split(new RegExp(`(${highlight})`, 'gi'));
   }, [text, highlight]);
 
   return (
     <span>
-      {textMatchs.map((text, index) => (
+      {textMatch.map((text, index) => (
         <span
           key={index}
           className={`${text.toLowerCase() === highlight.toLowerCase() && 'highlight'}`}

@@ -4,12 +4,12 @@ interface OptionsListProps<T> {
   options: T[] | null
   inputValue: string
   debouncedValue?: string
-  noOptionsLabel?: string
   selectedIndex: number
-  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>
-  setShowOptions: React.Dispatch<React.SetStateAction<boolean>>
+  noOptionsLabel?: string
   onSelect: (option: T) => void
   getOptionLabel: (option: T) => string
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>
+  setShowOptions: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 /**
@@ -23,27 +23,27 @@ interface OptionsListProps<T> {
  * @param {number} selectedIndex - Is a state variable that keeps track of the
  * currently selected index in a list of options. It is used to highlight the currently selected option
  * and to determine which option to select when the user presses the enter key.
- * @param setSelectedIndex - Is a React state setter function that takes a new value of type 
- * `React.SetStateAction<number>`and updates the state of the selected index.
- * @param setShowOptions - Is a React state setter function that is used to update the
- * state of whether or not the options list should be displayed. It is likely used in conjunction with
- * a boolean state variable to conditionally render the options list.
  * @param onSelect - A function that takes an option as its argument and is called when that option is
  * selected.
  * @param getOptionLabel - Is a function that takes an option of type `T` and returns
  * a string label for that option. This label is used to display the option in the dropdown list and to
  * match against the user's input.
+ * @param setSelectedIndex - Is a React state setter function that takes a new value of type 
+ * `React.SetStateAction<number>`and updates the state of the selected index.
+ * @param setShowOptions - Is a React state setter function that is used to update the
+ * state of whether or not the options list should be displayed. It is likely used in conjunction with
+ * a boolean state variable to conditionally render the options list.
  */
 function OptionsList<T>({
   options,
   inputValue,
   debouncedValue,
+  selectedIndex,
   noOptionsLabel,
-  selectedIndex, 
-  setSelectedIndex, 
-  setShowOptions,
   onSelect,
   getOptionLabel,
+  setSelectedIndex,
+  setShowOptions,
 }: OptionsListProps<T>) {
 
   if (!options || !Array.isArray(options)) {
@@ -61,10 +61,10 @@ function OptionsList<T>({
             inputValue={inputValue}
             debouncedValue={debouncedValue}
             selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-            setShowOptions={setShowOptions}
             onSelect={onSelect}
             getOptionLabel={getOptionLabel}
+            setSelectedIndex={setSelectedIndex}
+            setShowOptions={setShowOptions}
           />
         ))
       )}

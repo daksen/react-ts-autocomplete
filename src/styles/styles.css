@@ -68,7 +68,7 @@ input {
   width: 100%;
 }
 
-.icon-container {
+.loader-container {
   position: absolute;
   right: 10px;
   top: calc(50% - 10px);

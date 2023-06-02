@@ -26,15 +26,10 @@ function App() {
   });
 
   /* Create a memoized URL string that is used to fetch data from the API endpoint. The `useMemo` hook
-  is used to memoize the URL string so that it is only recomputed when the `debouncedValue` changes.  */
-  const url = useMemo(() => {
-    if (debouncedValue) {
-      return API_BASE_URL + debouncedValue;
-    }
-    return '';
-  }, [debouncedValue]);
+  is used to memoize the URL string so that it is only recomputed when the `debouncedValue` changes. */
+  const url = useMemo(() => debouncedValue ? API_BASE_URL + debouncedValue : '', [debouncedValue]);
 
-  /* Use the custom `useFetch` hook to fetch data from the API endpoint specified by the `url` variable.*/
+  /* Use the custom `useFetch` hook to fetch data from the API endpoint specified by the `url` variable. */
   const { data, loading } = useFetch<ResponseData>(url);
 
   /* Normalize the response data */
@@ -62,12 +57,12 @@ function App() {
         options={drinks}
         inputValue={inputValue}
         debouncedValue={debouncedValue}
-        placeholder="Search for a drink..."
-        noOptionsLabel="No drinks"
         loading={loading}
         showLoading={showLoading}
-        onInputChange={onInputChange}
+        placeholder="Search for a drink..."
+        noOptionsLabel="No drinks"
         onSelect={onSelect}
+        onInputChange={onInputChange}
         getOptionLabel={getOptionLabel}
       />
       { selectedDrink && (

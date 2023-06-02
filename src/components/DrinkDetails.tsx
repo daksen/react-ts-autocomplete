@@ -7,15 +7,14 @@ interface DrinkDetailsProps {
 }
 
 /**
- * This is a functional component in TypeScript React that displays details of a drink, including its
- * image, title, recipe, and instructions.
+ * This is a functional component that displays the details of a drink, including its image, title,
+ * recipe, and instructions.
  * @param {DrinkDetailsProps}  - The code snippet is a functional component called `DrinkDetails` that
- * takes in a single prop called `drink` of type `DrinkDetailsProps`. The component uses the `useMemo`
- * hook to memoize the result of calling the `getDrinkRecipe` function.
+ * takes in a single prop called `drink` of type `DrinkDetailsProps`.
  * @returns This code is returning a React component that displays the details of a drink, including
  * the drink's image, title, recipe, and instructions. The recipe is generated using the
  * `getDrinkRecipe` function, which takes the `drink` object as an argument and returns an array of
- * recipe items.
+ * recipe steps.
  */
 function DrinkDetails({ drink }: DrinkDetailsProps) {
   
