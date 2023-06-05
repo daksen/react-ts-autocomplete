@@ -25,7 +25,7 @@ To run the project locally, follow these steps:
 Clone the repository:
 
 ```shell
-git clone https://github.com/daksen/react-ts-autocomplete.git
+git clone https://github.com/daksen/react-ts-drinks.git
 ```
 
 Navigate to the project directory:
@@ -49,7 +49,7 @@ npm run dev
 Open the application in your browser:
 
 ```shell
-http://localhost:5173/react-ts-autocomplete/
+http://localhost:5173/react-ts-drinks/
 ```
 
 ## Build
